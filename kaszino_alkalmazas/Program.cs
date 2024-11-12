@@ -24,6 +24,7 @@ namespace kaszino_alkalmazas
                 case 1:
                     vegosszeg = highLowJatek(penz);
                     penz = vegosszeg;
+                    Console.WriteLine($"Jelenlegi egyenleged: {penz}");
                     break;
                 case 2:
                     break;
@@ -107,6 +108,11 @@ namespace kaszino_alkalmazas
             else if (ujabb == kartya) {
                 Console.WriteLine("Egyenlő, a tétedet visszakapod.");
                 return penz;
+            }
+            else if (ujabb < kartya || nagyobb == "kisebb")
+            {
+                Console.WriteLine($"Jól tippetél, az új kártya értéke: {ujabb}");
+                return penz + teted;
             }
             else
             {
