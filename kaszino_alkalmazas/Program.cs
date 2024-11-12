@@ -58,6 +58,7 @@ namespace kaszino_alkalmazas
             int jatekosPont = HuzLapot() + HuzLapot();
             int kaszinoPont = HuzLapot() + HuzLapot();
 
+            Console.WriteLine($"Lapjaid összege: {jatekosPont}");
             Console.WriteLine("Akarsz még egy lapot húzni? (1 = igen, 2 = nem)");
             int pluszLap = Convert.ToInt32(Console.ReadLine());
             if (pluszLap == 1)
