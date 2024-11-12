@@ -71,12 +71,7 @@ namespace kaszino_alkalmazas
                 kaszinoPont += HuzLapot();
             }
 
-            if (jatekosPont > 21)
-            {
-                Console.WriteLine($"Vesztettél, a téted levonásra kerül. Kaszinó pontja: {kaszinoPont}, Te pontod: {jatekosPont}");
-                return penz - teted;
-            }
-            else if (kaszinoPont > 21 || (jatekosPont <= 21 && jatekosPont > kaszinoPont))
+            if (kaszinoPont > 21 || (jatekosPont <= 21 && jatekosPont > kaszinoPont))
             {
                 Console.WriteLine($"Nyertél, a téted hozzá lesz adva az egyenlegedhez. Kaszinó pontja: {kaszinoPont}, Te pontod: {jatekosPont}");
                 return penz + teted;
