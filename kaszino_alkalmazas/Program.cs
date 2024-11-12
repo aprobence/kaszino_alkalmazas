@@ -94,9 +94,25 @@ namespace kaszino_alkalmazas
 
         static int highLowJatek(int penz)
         {
+            int teted = tethuzas(penz);
             int kartya = HuzLapot();
-            Console.WriteLine($"");
-            return penz;
+            Console.WriteLine($"A kártya értéke: {kartya}.\nA következő lap értéke nagyobb vagy kisebb lesz?");
+            string nagyobb = Console.ReadLine().ToLower();
+            int ujabb = HuzLapot();
+            if (ujabb > kartya || nagyobb == "nagyobb")
+            {
+                Console.WriteLine($"Jól tippetél, az új kártya értéke: {ujabb}");
+                return penz + teted;
+            }
+            else if (ujabb == kartya) {
+                Console.WriteLine("Egyenlő, a tétedet visszakapod.");
+                return penz;
+            }
+            else
+            {
+                Console.WriteLine($"A tipped helytelen, az új kártya értéke: {ujabb}");
+                return penz - teted;
+            }
         }
     }
 }
