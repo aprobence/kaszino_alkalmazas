@@ -22,6 +22,10 @@ namespace kaszino_alkalmazas
                     Console.WriteLine($"Jelenlegi egyenleged: {penz}");
                     break;
                 case 1:
+                    vegosszeg = highLowJatek(penz);
+                    penz = vegosszeg;
+                    break;
+                case 2:
                     break;
                 default:
                     Console.WriteLine("Érvénytelen választás. Kérlek, próbáld újra.");
@@ -59,9 +63,9 @@ namespace kaszino_alkalmazas
             int kaszinoPont = HuzLapot() + HuzLapot();
 
             Console.WriteLine($"Lapjaid összege: {jatekosPont}");
-            Console.WriteLine("Akarsz még egy lapot húzni? (1 = igen, 2 = nem)");
-            int pluszLap = Convert.ToInt32(Console.ReadLine());
-            if (pluszLap == 1)
+            Console.WriteLine("Hit vagy Stand?");
+            string pluszLap = Console.ReadLine().ToLower();
+            if (pluszLap == "hit")
             {
                 jatekosPont += HuzLapot();
             }
@@ -86,6 +90,13 @@ namespace kaszino_alkalmazas
                 Console.WriteLine($"Vesztettél, a téted levonásra kerül. Kaszinó pontja: {kaszinoPont}, Te pontod: {jatekosPont}");
                 return penz - teted;
             }
+        }
+
+        static int highLowJatek(int penz)
+        {
+            int kartya = HuzLapot();
+            Console.WriteLine($"");
+            return penz;
         }
     }
 }
